@@ -10,7 +10,7 @@
 namespace PFAseguramientoCS {
     
     
-    public partial class Index {
+    public partial class Inicio {
         
         /// <summary>
         /// Control form1.
@@ -31,33 +31,6 @@ namespace PFAseguramientoCS {
         protected global::System.Web.UI.WebControls.TextBox TxtIngresar;
         
         /// <summary>
-        /// Control TxtSalida.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSalida;
-        
-        /// <summary>
-        /// Control Desencriptar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Desencriptar;
-        
-        /// <summary>
-        /// Control LblResultado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblResultado;
-        
-        /// <summary>
         /// Control Rb_Encriptar.
         /// </summary>
         /// <remarks>
@@ -74,5 +47,23 @@ namespace PFAseguramientoCS {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton Rb_Desencriptar;
+        
+        /// <summary>
+        /// Control Desencriptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Desencriptar;
+        
+        /// <summary>
+        /// Control TxtSalida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtSalida;
     }
 }

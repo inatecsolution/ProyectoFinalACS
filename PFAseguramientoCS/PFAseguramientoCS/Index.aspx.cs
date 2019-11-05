@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace PFAseguramientoCS
 {
@@ -20,17 +15,19 @@ namespace PFAseguramientoCS
             string cadenaform = TxtIngresar.Text;
             string cadenaencriptform = TxtSalida.Text;
 
-            EncriptarDesencriptar(cadenaform, cadenaencriptform);
+            Compute(cadenaform, cadenaencriptform);
+            //EncriptarDesencriptar(cadenaform, cadenaencriptform);
         }
 
-        public void EncriptarDesencriptar(string cadena, string cadenaencript)
+        public int EncriptarDesencriptar(string cadena, string cadenaencript)
         {
-            
+            int x = 0;
             if (Rb_Encriptar.Checked)
             {
                 if (string.IsNullOrEmpty(cadena))
                 {
                     Response.Write("<script>alert('La cadena está vacia, verifique para continuar')</script>");
+                    x = -1;
                 }
                 else
                 {
@@ -38,6 +35,7 @@ namespace PFAseguramientoCS
                     TxtSalida.Text = Convert.ToBase64String(encriptar);
                     TxtIngresar.Text = string.Empty;
                     TxtIngresar.Focus();
+                    x = 1;
                 }
             }
             else if (Rb_Desencriptar.Checked)
@@ -45,6 +43,7 @@ namespace PFAseguramientoCS
                 if (string.IsNullOrEmpty(cadenaencript))
                 {
                     Response.Write("<script>alert('La cadena está vacia, verifique para continuar')</script>");
+                    x = -1;
                 }
                 else
                 {
@@ -52,8 +51,57 @@ namespace PFAseguramientoCS
                     TxtIngresar.Text = Encoding.Unicode.GetString(desencriptar);
                     TxtSalida.Text = string.Empty;
                     TxtIngresar.Focus();
+                    x = 1;
                 }
             }
+            return x;     
         }
+
+
+        public int Compute(string s, string t)
+        {
+            int n = s.Length;
+            int m = t.Length;
+            int[,] d = new int[n + 1, m + 1];
+
+            if (n == 0)
+            {
+                return m;
+            }
+
+            if (m == 0)
+            {
+                return n;
+            }
+
+            for (int i = 0; i<= n; d[i,0] = i++)
+            {
+
+            }
+
+            for (int j = 0; j <= m; d[0, j] = j++)
+            {
+
+            }
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j<= m; j++)
+                {
+                    int cost = (t[j - 1] == s[i - 1]) ? 0 : 1;
+
+                    d[i, j] = Math.Min(
+                        Math.Min(d[i - 1, j] + 1, d[i, j - 1] + 1),
+                        d[i - 1, j - 1] + cost);
+                }
+            }
+            string x = Convert.ToString(d[n, m]);
+            if (!string.IsNullOrEmpty(x))
+            {
+                LblResultado.Text = "Faltan " + x + " caracteres para igualar la cadena 1";
+            }
+            return d[n, m];
+            
+        }        
     }
 }

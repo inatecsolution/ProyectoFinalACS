@@ -1,8 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="PFAseguramientoCS.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="PFAseguramientoCS.Inicio" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
     <!--- Basic Page Needs
@@ -67,13 +65,35 @@
                 <div class="contacts">
                     <div class="row contact-details">
                         <div class="columns">
-                            <h3>Calcula los caracteres faltantes a una cadena para igualar otra.</h3>
-                            <p>                           
-                                <asp:TextBox Width="400px" placeholder="Ingrese primer cadena" ID="TxtIngresar" runat="server"></asp:TextBox>
-                                <asp:TextBox Width="400px" placeholder="Ingrese segunda cadena" ID="TxtSalida" runat="server"></asp:TextBox>
+                            <h3>Encriptar/Descencriptar.</h3>
+                            <p>
+                                <asp:TextBox Width="400px" ID="TxtIngresar" runat="server"></asp:TextBox>
+
+                                <footer>
+                                    <div class="">
+                                        <div class="">
+                                            <ul style="margin-left:-550px" class="copyright">
+                                                <li><asp:RadioButton GroupName="RButton1" ID="Rb_Encriptar" runat="server" Text="" /></li>
+                                                <li>Encriptar</li>                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </footer>
+
+                                <footer>
+                                    <div class="">
+                                        <div class="">
+                                            <ul style="margin-left:-525px" class="copyright">
+                                                <li><asp:RadioButton GroupName="RButton1" ID="Rb_Desencriptar" runat="server" Text=""/></li>
+                                                <li>Desencriptar</li>                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </footer>
+                                
+                                
                                 <asp:Button Width="400px" OnClick="Desencriptar_Click" ID="Desencriptar" runat="server" Text="Procesar" />
-                                <br />
-                                <asp:Label Font-Size="18px" ID="LblResultado" runat="server" Text=""></asp:Label>
+                                <asp:TextBox Width="400px" ID="TxtSalida" runat="server"></asp:TextBox>
                             </p>
                         </div>
                     </div>
@@ -92,32 +112,6 @@
                 <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#intro"><i class="icon-up-open"></i></a></div>
             </footer>
 
-                <div style="visibility:hidden">
-                                    <footer>
-                                        <div class="">
-                                            <div class="">
-                                                <ul style="margin-left: -550px" class="copyright">
-                                                    <li>
-                                                        <asp:RadioButton GroupName="RButton1" ID="Rb_Encriptar" runat="server" Text="" /></li>
-                                                    <li>Encriptar</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </footer>
-
-                                    <footer>
-                                        <div class="">
-                                            <div class="">
-                                                <ul style="margin-left: -525px" class="copyright">
-                                                    <li>
-                                                        <asp:RadioButton GroupName="RButton1" ID="Rb_Desencriptar" runat="server" Text="" /></li>
-                                                    <li>Desencriptar</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </footer>
-                                </div>
-
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
             <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
@@ -134,3 +128,4 @@
     </form>
 </body>
 </html>
+
